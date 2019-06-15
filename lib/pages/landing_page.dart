@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
+import './login_page.dart';
 
 
 var finalScore = 0;
@@ -7,7 +9,7 @@ var quiz = new FlutterQuiz();
 
 class FlutterQuiz{
   
-
+final _random =new Random();
 
   var questions = [
     "Who won the LokSabha election of 2019?",
@@ -22,6 +24,7 @@ class FlutterQuiz{
     ["Rahul Gandhi", "Mamta Banerjee", "Narendra Modi", "Arvind Kejriwal"],
     ["Arohan","Aavishkar","E-Summit","Verve"],
     ["CCA","GLUG","EDC","MNTC"]
+    
   ];
 
 
@@ -31,6 +34,8 @@ class FlutterQuiz{
 }
 
 class Quizz extends StatefulWidget{
+
+      
   @override
   State<StatefulWidget> createState() {
     return new QuizzState();
@@ -38,6 +43,7 @@ class Quizz extends StatefulWidget{
 }
 
 class QuizzState extends State<Quizz> {
+  
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
@@ -100,6 +106,7 @@ class QuizzState extends State<Quizz> {
                           debugPrint("Wrong");
                         }
                         updateQuestion();
+                        
                       },
                       child: new Text(quiz.choices[questionNumber][0],
                         style: new TextStyle(
@@ -110,6 +117,7 @@ class QuizzState extends State<Quizz> {
 
                     //button 2
                     new MaterialButton(
+                      
                       minWidth: 120.0,
                       color: Colors.blueGrey,
                       onPressed: (){

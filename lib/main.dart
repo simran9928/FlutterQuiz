@@ -1,7 +1,8 @@
-
 import 'package:flutter/material.dart';
 import './pages/landing_page.dart';
 import './pages/login_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 void main(){
   runApp(
@@ -53,7 +54,7 @@ class FlutterQuizState extends State<FlutterQuiz>{
                child: new Text("Let's Start",
                  style: new TextStyle(
                      fontSize: 18.0,
-                     color: Colors.white
+                     color: Colors.white,
                  ),)
            )
          ],
